@@ -12,7 +12,7 @@ RUN dotnet restore
 
 COPY . .
 RUN npm install
-RUN npm run build:css
+RUN npm run build:minified:css
 
 RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
 
