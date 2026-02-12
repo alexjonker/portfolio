@@ -1,0 +1,255 @@
+{
+    "projects": [
+        {
+            "slug": "portfolio",
+            "name": "Portfolio",
+            "summary": "This portfolio website.",
+            "description": "Not sure if I can really call this a project but why not just put it here.\n\nThis website is built with Blazor and hosted on my homelab.\nIt is being proxied trough a vps in Germany just like all my public sites and services.",
+            "period": "2026",
+            "skills": [
+                "csharp",
+                "blazor",
+                "git",
+                "github",
+                "docker",
+                "dockerfile",
+                "coolify"
+            ],
+            "links": [
+                {
+                    "label": "Homepage",
+                    "url": "https://alexjonker.dev"
+                }
+            ]
+        },
+        {
+            "slug": "xrooster",
+            "name": "xrooster",
+            "summary": "An unofficial schedule app for Android and iOS.",
+            "description": "Our school used an app called Eduarte for schedules, but it was ugly, hard to log in and missed features we wanted.\n\nSo me and a friend decided we should try to build our own app.\nWe found that Eduarte didn't use any api's but used server side rendereing instead. But we found that they got their schedule from another site called Xedule, and they did have undocumented api's.\n\nWith some browser devtools and a hacky login system it worked.\n\n\nWhile working on this project I also found a security vulnerability that allowed every student to see other students schedules and grades by just having their student email, which was very easy to find in teams.\n\nI reported this to the school and they fixed it in a couple of days.",
+            "period": "2025-2026",
+            "skills": [
+                "flutter",
+                "dart",
+                "git",
+                "github",
+                "github-workflows"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/phoebesoftware/xrooster"
+                },
+                {
+                    "label": "IzzyOnDroid",
+                    "url": "https://apt.izzysoft.de/fdroid/index/apk/com.phoebesoftware.xrooster"
+                },
+                {
+                    "label": "Friend",
+                    "url": "https://github.com/kietelmuis"
+                }
+            ]
+        },
+        {
+            "slug": "scootaloo",
+            "name": "Scootaloo",
+            "summary": "A chat app made with Django.",
+            "description": "This project was made for school in a group of 3. We decided to make a chat app in Django since python was basically the only language we knew properly at that point.\n\nThe app works but not in a good way, we didn't really know what we were doing so please don't look at the code or use it =).",
+            "period": "2025",
+            "skills": [
+                "python",
+                "django",
+                "git",
+                "github"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/AlexJonker/scootaloo"
+                },
+                {
+                    "label": "Friend",
+                    "url": "https://github.com/natas15"
+                },
+                {
+                    "label": "Friend",
+                    "url": "https://github.com/Bm2404"
+                }
+            ]
+        },
+        {
+            "slug": "cli-racing-game",
+            "name": "CLI Racing Game",
+            "summary": "A simple command-line racing game.",
+            "description": "On of my first projects. We had to make a simple cli game and I decided to make a racing game with gambling.\n\nIt has storage by saving to a json file.\nThe game is easaly configurable in another json file. Here you can add more cars.",
+            "period": "2025",
+            "skills": [
+                "python",
+                "git",
+                "github"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/AlexJonker/cli-racing-game"
+                }
+            ]
+        }
+    ],
+    "education": [
+        {
+            "slug": "talland-software-development",
+            "name": "Software Development",
+            "summary": "Software development program at Talland College.",
+            "description": "A 4 year mbo niveau 4 program for software development.\n\nI am currently doing this program in 3 years and I'm in my 2nd year now.\n\nSo far I've learned a lot of different languages and skills listed above.",
+            "period": "2024 - present",
+            "location": "Talland College Alkmaar, NL",
+            "skills": [
+                "php",
+                "django",
+                "python",
+                "mysql",
+                "git",
+                "github"
+            ],
+            "links": [
+                {
+                    "label": "More info",
+                    "url": "https://www.talland.nl/mbo/software-developer"
+                }
+            ]
+        },
+        {
+            "slug": "ict-vanaf-morgen",
+            "name": "Software Development Internship",
+            "summary": "Internship at ICT Vanaf Morgen, a local ICT company.",
+            "description": "ICT Vanaf Morgen is a small local ict company that refurbishes old computers and laptops.\nThey also do webdevelopment which is where I worked.\n\nI worked on a small internal tool to manage their microsoft 365 licenses that they sell.\nI also worked on an internal tool to keep track of employee's attendance and hours.\n\nBoth projects were made with symfony.",
+            "period": "2025 - 2026",
+            "location": "ICT Vanaf Morgen Alkmaar, NL",
+            "skills": [
+                "php",
+                "symfony",
+                "git",
+                "github"
+            ],
+            "links": [
+                {
+                    "label": "Their site",
+                    "url": "https://ictvanafmorgen.nl/"
+                }
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "slug": "windows",
+            "name": "Windows",
+            "description": "Doesn't everyone know this anyway?"
+        },
+        {
+            "slug": "linux",
+            "name": "Linux",
+            "description": "Absolutely love linux, I use it daily on both my pc, laptop and homelab."
+        },
+        {
+            "slug": "html",
+            "name": "HTML",
+            "description": "Creating simple webpages."
+        },
+        {
+            "slug": "css",
+            "name": "CSS",
+            "description": "Styling websites."
+        },
+        {
+            "slug": "php",
+            "name": "PHP",
+            "description": "Creating more advanced websites, great to use in combination with frameworks like Laravel and Symfony."
+        },
+        {
+            "slug": "laravel",
+            "name": "Laravel",
+            "description": "PHP framework for creating websites with server side rendering."
+        },
+        {
+            "slug": "symfony",
+            "name": "Symfony",
+            "description": "PHP framework for creating websites with server side rendering.\nUsed this at my internship at ICT Vanaf Morgen."
+        },
+        {
+            "slug": "python",
+            "name": "Python",
+            "description": "Programming language useful for quickly creating scripts and tui apps."
+        },
+        {
+            "slug": "django",
+            "name": "Django",
+            "description": "Python web framework. I used this for a school project once."
+        },
+        {
+            "slug": "mysql",
+            "name": "MySQL",
+            "description": "Relational database management system for structured data storage."
+        },
+        {
+            "slug": "bash",
+            "name": "Bash",
+            "description": "Unix shell used for scripting, automation, and server management."
+        },
+        {
+            "slug": "flutter",
+            "name": "Flutter",
+            "description": "Cross-platform UI toolkit for building natively compiled applications from a single codebase."
+        },
+        {
+            "slug": "dart",
+            "name": "Dart",
+            "description": "Programming language optimized for building mobile, desktop, and web applications with Flutter."
+        },
+        {
+            "slug": "github-workflows",
+            "name": "GitHub Workflows",
+            "description": "CI/CD automation tool integrated with GitHub for streamlined development processes."
+        },
+        {
+            "slug": "git",
+            "name": "Git",
+            "description": "Version control system for tracking changes and collaborating on code."
+        },
+        {
+            "slug": "github",
+            "name": "GitHub",
+            "description": "Web-based platform for hosting and collaborating on Git repositories."
+        },
+        {
+            "slug": "csharp",
+            "name": "C#",
+            "description": "Modern, object-oriented programming language developed by Microsoft for building a wide range of applications."
+        },
+        {
+            "slug": "blazor",
+            "name": "Blazor",
+            "description": "Web framework for building interactive web applications using C# and .NET."
+        },
+        {
+            "slug": "docker",
+            "name": "Docker",
+            "description": "Containerization platform for consistent development and deployment environments."
+        },
+        {
+            "slug": "docker-compose",
+            "name": "Docker Compose",
+            "description": "Tool for defining and running multi-container Docker applications."
+        },
+        {
+            "slug": "dockerfile",
+            "name": "Dockerfile",
+            "description": "Script for building Docker images."
+        },
+        {
+            "slug": "coolify",
+            "name": "Coolify",
+            "description": "Self-hosted app I use to host my portfolio website."
+        }
+    ]
+}

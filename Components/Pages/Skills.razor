@@ -1,0 +1,26 @@
+@page "/skills"
+@inject PortfolioDataService Portfolio
+
+<PageTitle>Skills</PageTitle>
+
+<section class="min-h-screen bg-neutral-50 text-neutral-900">
+    <div class="mx-auto max-w-3xl px-6 py-16">
+        <header class="border-b border-neutral-200 pb-6">
+            <h1 class="mt-3 text-3xl font-semibold tracking-tight">Skills</h1>
+            <p class="mt-3 text-base text-neutral-600">Languages and other skills I know.</p>
+        </header>
+
+        <div class="mt-8 grid gap-4">
+            @foreach (var skill in Portfolio.Skills)
+            {
+                <a href="@($"/skills/{skill.Slug}")">
+                    <article class="border border-neutral-200 bg-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-base font-semibold">@skill.Name</h2>
+                        </div>
+                    </article>
+                </a>
+            }
+        </div>
+    </div>
+</section>
