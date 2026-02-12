@@ -1,8 +1,2 @@
 @import "tailwindcss";
 
-
-/* Currently only used on the Cambridge page */
-.education-image {
-	max-width: 520px;
-	width: 50%;
-}

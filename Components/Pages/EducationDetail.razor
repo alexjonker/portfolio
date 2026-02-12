@@ -39,7 +39,9 @@
             {
                 if (block.IsImage)
                 {
-                    <img class="education-image w-full rounded-lg border border-neutral-200 bg-white" src="@block.Value" alt="@block.Alt" loading="lazy" />
+                    <button class="cursor-zoom-in" type="button" @onclick="(() => OpenLightbox(block))">
+                        <img class="w-1/2 max-w-130 rounded-lg border border-neutral-200 bg-white" src="@block.Value" alt="@block.Alt" loading="lazy" />
+                    </button>
                 }
                 else
                 {
@@ -60,12 +62,23 @@
     </div>
 </section>
 
+@if (_activeImage is not null)
+{
+    <div class="cursor-pointer fixed inset-0 flex items-center justify-center bg-black/70" @onclick="CloseLightbox" role="dialog" aria-modal="true">
+        <div class="cursor-default relative" @onclick:stopPropagation="true">
+            <button class="absolute top-2 right-2 rounded-full bg-black/75 px-2.5 py-1.5 text-xs font-medium text-white cursor-pointer hover:bg-black/90" type="button" @onclick="CloseLightbox" aria-label="Close image">Close</button>
+            <img class="max-h-[80vh] rounded-lg" src="@_activeImage.Value" alt="@_activeImage.Alt" />
+        </div>
+    </div>
+}
+
 @code {
     [Parameter] public string? Slug { get; set; }
 
     private EducationItem? _education;
     private IReadOnlyList<SkillItem> _linkedSkills = Array.Empty<SkillItem>();
     private IReadOnlyList<DescriptionBlock> _descriptionBlocks = Array.Empty<DescriptionBlock>();
+    private DescriptionBlock? _activeImage;
 
     private static readonly Regex ImageTagRegex = new(@"\[(?<path>images\/[^\]\s]+)\]", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
@@ -136,5 +149,15 @@
     {
         public static DescriptionBlock Text(string value) => new(false, value, null);
         public static DescriptionBlock Image(string value, string alt) => new(true, value, alt);
+    }
+
+    private void OpenLightbox(DescriptionBlock block)
+    {
+        _activeImage = block;
+    }
+
+    private void CloseLightbox()
+    {
+        _activeImage = null;
     }
 }
