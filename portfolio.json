@@ -161,7 +161,10 @@
                 "blazor",
                 "git",
                 "github",
-                "wordpress"
+                "wordpress",
+                "html",
+                "css",
+                "javascript"
             ],
             "links": [
                 {
@@ -180,6 +183,7 @@
             "skills": [
                 "php",
                 "symfony",
+                "javascript",
                 "git",
                 "github",
                 "wordpress"
@@ -333,6 +337,11 @@
             "slug": "wordpress",
             "name": "WordPress",
             "description": "Makes creating websites super simple."
+        },
+        {
+            "slug": "javascript",
+            "name": "JavaScript",
+            "description": "Programming language for websites, code that runs on the client-side in the browser."
         }
     ]
 }
