@@ -1,4 +1,6 @@
 @page "/education/{Slug}"
+@using System.IO
+@using System.Text.RegularExpressions
 @inject NavigationManager Navigation
 @inject PortfolioDataService Portfolio
 
@@ -33,7 +35,17 @@
             </div>
 
 
-            <p class="whitespace-pre-line">@_education.Description</p>
+            @foreach (var block in _descriptionBlocks)
+            {
+                if (block.IsImage)
+                {
+                    <img class="education-image w-full rounded-lg border border-neutral-200 bg-white" src="@block.Value" alt="@block.Alt" loading="lazy" />
+                }
+                else
+                {
+                    <p class="whitespace-pre-line">@block.Value</p>
+                }
+            }
             
             @if (_education.Links.Count > 0)
             {
@@ -53,6 +65,9 @@
 
     private EducationItem? _education;
     private IReadOnlyList<SkillItem> _linkedSkills = Array.Empty<SkillItem>();
+    private IReadOnlyList<DescriptionBlock> _descriptionBlocks = Array.Empty<DescriptionBlock>();
+
+    private static readonly Regex ImageTagRegex = new(@"\[(?<path>images\/[^\]\s]+)\]", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
     protected override void OnParametersSet()
     {
@@ -65,5 +80,61 @@
         }
 
         _linkedSkills = Portfolio.ResolveSkills(_education.skills);
+        _descriptionBlocks = ParseDescription(_education.Description);
+    }
+
+    private static IReadOnlyList<DescriptionBlock> ParseDescription(string? description)
+    {
+        if (string.IsNullOrWhiteSpace(description)) return Array.Empty<DescriptionBlock>();
+
+        var blocks = new List<DescriptionBlock>();
+        var lastIndex = 0;
+
+        foreach (Match match in ImageTagRegex.Matches(description))
+        {
+            if (match.Index > lastIndex)
+            {
+                var text = description.Substring(lastIndex, match.Index - lastIndex);
+                if (!string.IsNullOrWhiteSpace(text))
+                {
+                    blocks.Add(DescriptionBlock.Text(text.Trim('\r', '\n')));
+                }
+            }
+
+            var path = match.Groups["path"].Value;
+            if (!path.StartsWith('/'))
+            {
+                path = "/" + path;
+            }
+
+            var altText = BuildAltText(path);
+            blocks.Add(DescriptionBlock.Image(path, altText));
+            lastIndex = match.Index + match.Length;
+        }
+
+        if (lastIndex < description.Length)
+        {
+            var remaining = description[lastIndex..];
+            if (!string.IsNullOrWhiteSpace(remaining))
+            {
+                blocks.Add(DescriptionBlock.Text(remaining.Trim('\r', '\n')));
+            }
+        }
+
+        return blocks;
+    }
+
+    private static string BuildAltText(string path)
+    {
+        var fileName = Path.GetFileNameWithoutExtension(path);
+        return string.IsNullOrWhiteSpace(fileName)
+            ? "Education image"
+            : fileName.Replace('-', ' ').Replace('_', ' ');
+    }
+
+    private sealed record DescriptionBlock(bool IsImage, string Value, string? Alt)
+    {
+        public static DescriptionBlock Text(string value) => new(false, value, null);
+        public static DescriptionBlock Image(string value, string alt) => new(true, value, alt);
     }
 }

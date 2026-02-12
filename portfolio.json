@@ -195,25 +195,20 @@
             "slug": "cambridge",
             "name": "B2 Cambridge English",
             "summary": "Cambridge English certification.",
-            "description": "I took the Cambridge English exam in 2023 and got B2 level.",
+            "description": "I took the Cambridge English exam in 2023 and got a B2 certification.\n\nHere are the results:\n\n[images/cambridge/exam_result_1.jpeg]\n\n[images/cambridge/exam_result_2.jpeg]",
             "period": "2024",
             "location": "Talland College Alkmaar, NL",
             "skills": [
-                "php",
-                "symfony",
-                "git",
-                "github",
-                "wordpress"
-            ],
-            "links": [
-                {
-                    "label": "Their site",
-                    "url": "https://ictvanafmorgen.nl/"
-                }
+                "english"
             ]
         }
     ],
     "skills": [
+        {
+            "slug": "english",
+            "name": "English",
+            "description": "I have a B2 level Cambridge English certification.\n\nClick the button below for more details."
+        },
         {
             "slug": "windows",
             "name": "Windows",
