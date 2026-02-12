@@ -203,8 +203,13 @@
         },
         {
             "slug": "mysql",
-            "name": "MySQL",
+            "name": "MySQL/MariaDB",
             "description": "Relational database management system for structured data storage."
+        },
+        {
+            "slug": "phpmyadmin",
+            "name": "phpMyAdmin",
+            "description": "Webui to easily manage databases. Very useful tool I can't live without."
         },
         {
             "slug": "bash",
