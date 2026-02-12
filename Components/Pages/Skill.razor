@@ -15,6 +15,32 @@
         <div class="mt-6 grid gap-4 text-sm text-neutral-700">
             <p class="whitespace-pre-line">@_skill.Description</p>
         </div>
+
+        @if (_relatedProjects.Count > 0)
+        {
+            <div class="mt-6 grid gap-3">
+                <p class="text-xs uppercase tracking-[0.2em] text-neutral-500">Projects this was used in</p>
+                <div class="flex flex-wrap gap-3">
+                    @foreach (var project in _relatedProjects)
+                    {
+                        <a class="border border-neutral-200 bg-white px-4 py-2 text-sm transition-colors hover:border-neutral-400" href="@($"/projects/{project.Slug}")" rel="noreferrer">@project.Name</a>
+                    }
+                </div>
+            </div>
+        }
+
+        @if (_relatedEducation.Count > 0)
+        {
+            <div class="mt-6 grid gap-3">
+                <p class="text-xs uppercase tracking-[0.2em] text-neutral-500">Education where I used/learned this</p>
+                <div class="flex flex-wrap gap-3">
+                    @foreach (var item in _relatedEducation)
+                    {
+                        <a class="border border-neutral-200 bg-white px-4 py-2 text-sm transition-colors hover:border-neutral-400" href="@($"/education/{item.Slug}")" rel="noreferrer">@item.name</a>
+                    }
+                </div>
+            </div>
+        }
     </div>
 </section>
 
@@ -23,6 +49,8 @@
     [Parameter] public string? Slug { get; set; }
 
     private SkillItem? _skill;
+    private IReadOnlyList<ProjectItem> _relatedProjects = Array.Empty<ProjectItem>();
+    private IReadOnlyList<EducationItem> _relatedEducation = Array.Empty<EducationItem>();
 
     protected override void OnParametersSet()
     {
@@ -31,6 +59,17 @@
         if (_skill is null)
         {
             Navigation.NavigateTo("/404", true);
+            return;
         }
+
+        _relatedProjects = Portfolio.Projects
+            .Where(project => project.skills.Any(skill =>
+                skill.Equals(_skill.Slug, StringComparison.OrdinalIgnoreCase)))
+            .ToList();
+
+        _relatedEducation = Portfolio.Education
+            .Where(item => item.skills.Any(skill =>
+                skill.Equals(_skill.Slug, StringComparison.OrdinalIgnoreCase)))
+            .ToList();
     }
 }
