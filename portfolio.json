@@ -9,8 +9,11 @@
             "skills": [
                 "csharp",
                 "blazor",
+                "html",
+                "tailwindcss",
                 "git",
                 "github",
+                "linux",
                 "docker",
                 "dockerfile",
                 "coolify"
@@ -59,6 +62,7 @@
             "skills": [
                 "python",
                 "django",
+                "mysql",
                 "git",
                 "github"
             ],
@@ -109,8 +113,11 @@
                 "django",
                 "python",
                 "mysql",
+                "csharp",
+                "blazor",
                 "git",
-                "github"
+                "github",
+                "wordpress"
             ],
             "links": [
                 {
@@ -123,14 +130,15 @@
             "slug": "ict-vanaf-morgen",
             "name": "Software Development Internship",
             "summary": "Internship at ICT Vanaf Morgen, a local ICT company.",
-            "description": "ICT Vanaf Morgen is a small local ict company that refurbishes old computers and laptops.\nThey also do webdevelopment which is where I worked.\n\nI worked on a small internal tool to manage their microsoft 365 licenses that they sell.\nI also worked on an internal tool to keep track of employee's attendance and hours.\n\nBoth projects were made with symfony.",
+            "description": "ICT Vanaf Morgen is a small local ict company that refurbishes old computers and laptops.\nThey also do webdevelopment which is where I worked.\n\nI worked on a small internal tool to manage their microsoft 365 licenses that they sell.\nI also worked on an internal tool to keep track of employee's attendance and hours.\n\nBoth projects were made with symfony.\n\n\nI also updated some wordpress sites for clients.",
             "period": "2025 - 2026",
             "location": "ICT Vanaf Morgen Alkmaar, NL",
             "skills": [
                 "php",
                 "symfony",
                 "git",
-                "github"
+                "github",
+                "wordpress"
             ],
             "links": [
                 {
@@ -160,6 +168,11 @@
             "slug": "css",
             "name": "CSS",
             "description": "Styling websites."
+        },
+        {
+            "slug": "tailwindcss",
+            "name": "Tailwind CSS",
+            "description": "CSS framework to style websites quickly and easily."
         },
         {
             "slug": "php",
@@ -250,6 +263,11 @@
             "slug": "coolify",
             "name": "Coolify",
             "description": "Self-hosted app I use to host my portfolio website."
+        },
+        {
+            "slug": "wordpress",
+            "name": "WordPress",
+            "description": "Create website super simple."
         }
     ]
 }
