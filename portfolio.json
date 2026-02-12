@@ -15,7 +15,7 @@
     "home": {
         "hero": {
             "title": "Alex Jonker",
-            "summary": "Software development student focused on practical apps, tooling, and clean web experiences."
+            "summary": "Software development student.\nI enjoy coding and homelabbing."
         },
         "pinned": {
             "projects": [
@@ -45,7 +45,7 @@
             "slug": "portfolio",
             "name": "Portfolio",
             "summary": "This portfolio website.",
-            "description": "Not sure if I can really call this a project but why not just put it here.\n\nThis website is built with Blazor and hosted on my homelab.\nIt is being proxied trough a vps in Germany just like all my public sites and services.",
+            "description": "Not sure if I can really call this a project but why not just put it here.\n\nThis website is built with Blazor and hosted on my homelab.\nIt is being proxied through a VPS in Germany just like all my public sites and services.",
             "period": "2026",
             "skills": [
                 "csharp",
@@ -70,7 +70,7 @@
             "slug": "xrooster",
             "name": "xrooster",
             "summary": "An unofficial schedule app for Android and iOS.",
-            "description": "Our school used an app called Eduarte for schedules, but it was ugly, hard to log in and missed features we wanted.\n\nSo me and a friend decided we should try to build our own app.\nWe found that Eduarte didn't use any api's but used server side rendereing instead. But we found that they got their schedule from another site called Xedule, and they did have undocumented api's.\n\nWith some browser devtools and a hacky login system it worked.\n\n\nWhile working on this project I also found a security vulnerability that allowed every student to see other students schedules and grades by just having their student email, which was very easy to find in teams.\n\nI reported this to the school and they fixed it in a couple of days.",
+            "description": "Our school used an app called Eduarte for schedules, but it was ugly, hard to log in and missed features we wanted such as offline mode, customizability and more.\n\nSo a friend and I decided we should try to build our own app.\nWe found that Eduarte didn't use any APIs but used server-side rendering instead. But we found that they got their schedule from another site called Xedule, and they did have undocumented APIs.\n\nWith some browser devtools and a hacky login system it worked.\n\n\nWhile working on this project I also found a security vulnerability that allowed every student to see other students schedules and grades by just having their student email, which was very easy to find in Microsoft Teams.\n\nI reported this to the school and they fixed it in a couple of days.",
             "period": "2025-2026",
             "skills": [
                 "flutter",
@@ -98,7 +98,7 @@
             "slug": "scootaloo",
             "name": "Scootaloo",
             "summary": "A chat app made with Django.",
-            "description": "This project was made for school in a group of 3. We decided to make a chat app in Django since python was basically the only language we knew properly at that point.\n\nThe app works but not in a good way, we didn't really know what we were doing so please don't look at the code or use it =).",
+            "description": "This project was made for school in a group of 3. We decided to make a chat app in Django since Python was basically the only language we knew properly at that point.\n\nThe app works but not in a good way, we didn't really know what we were doing so please don't look at the code or use it =).",
             "period": "2025",
             "skills": [
                 "python",
@@ -128,7 +128,7 @@
             "slug": "cli-racing-game",
             "name": "CLI Racing Game",
             "summary": "A simple command-line racing game.",
-            "description": "On of my first projects. We had to make a simple cli game and I decided to make a racing game with gambling.\n\nIt has storage by saving to a json file.\nThe game is easaly configurable in another json file. Here you can add more cars.",
+            "description": "One of my first projects. We had to make a simple CLI game and I decided to make a racing game with gambling.\n\nIt has storage by saving to a JSON file.\nThe game is easily configurable in another JSON file. Here you can add more cars.",
             "period": "2025",
             "skills": [
                 "python",
@@ -173,7 +173,7 @@
             "slug": "ict-vanaf-morgen",
             "name": "Software Development Internship",
             "summary": "Internship at ICT Vanaf Morgen, a local ICT company.",
-            "description": "ICT Vanaf Morgen is a small local ict company that refurbishes old computers and laptops.\nThey also do webdevelopment which is where I worked.\n\nI worked on a small internal tool to manage their microsoft 365 licenses that they sell.\nI also worked on an internal tool to keep track of employee's attendance and hours.\n\nBoth projects were made with symfony.\n\n\nI also updated some wordpress sites for clients.",
+            "description": "ICT Vanaf Morgen is a small local ICT company that refurbishes old computers and laptops.\nThey also do web development which is where I worked.\n\nI worked on a small internal tool to manage their Microsoft 365 licenses that they sell.\nI also worked on an internal tool to keep track of employee's attendance and hours.\n\nBoth projects were made with Symfony.\n\n\nI also updated some WordPress sites for clients.",
             "period": "2025 - 2026",
             "location": "ICT Vanaf Morgen Alkmaar, NL",
             "skills": [
@@ -195,12 +195,12 @@
         {
             "slug": "windows",
             "name": "Windows",
-            "description": "Doesn't everyone know this anyway?"
+            "description": "The operating system that everyone knows. I used to use it a lot but I haven't touched it since switching to Linux."
         },
         {
             "slug": "linux",
             "name": "Linux",
-            "description": "Absolutely love linux, I use it daily on both my pc, laptop and homelab."
+            "description": "Absolutely love Linux, I use it daily on both my PC, laptop and homelab."
         },
         {
             "slug": "html",
@@ -225,17 +225,17 @@
         {
             "slug": "laravel",
             "name": "Laravel",
-            "description": "PHP framework for creating websites with server side rendering."
+            "description": "PHP framework for creating websites with server-side rendering."
         },
         {
             "slug": "symfony",
             "name": "Symfony",
-            "description": "PHP framework for creating websites with server side rendering.\nUsed this at my internship at ICT Vanaf Morgen."
+            "description": "PHP framework for creating websites with server-side rendering.\nUsed this at my internship at ICT Vanaf Morgen."
         },
         {
             "slug": "python",
             "name": "Python",
-            "description": "Programming language useful for quickly creating scripts and tui apps."
+            "description": "Programming language useful for quickly creating scripts and TUI apps."
         },
         {
             "slug": "django",
@@ -250,7 +250,7 @@
         {
             "slug": "phpmyadmin",
             "name": "phpMyAdmin",
-            "description": "Webui to easily manage databases. Very useful tool I can't live without."
+            "description": "Web UI to easily manage databases. Very useful tool I can't live without."
         },
         {
             "slug": "bash",
@@ -315,7 +315,7 @@
         {
             "slug": "wordpress",
             "name": "WordPress",
-            "description": "Create website super simple."
+            "description": "Makes creating websites super simple."
         }
     ]
 }
