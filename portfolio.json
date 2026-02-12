@@ -1,4 +1,45 @@
 {
+    "site": {
+        "displayName": "Alex",
+        "social": [
+            {
+                "iconPath": "/images/github.svg",
+                "url": "https://github.com/alexjonker"
+            },
+            {
+                "iconPath": "/images/linkedin.svg",
+                "url": "https://www.linkedin.com/in/ar-jonker/"
+            }
+        ]
+    },
+    "home": {
+        "hero": {
+            "title": "Alex Jonker",
+            "summary": "Software development student focused on practical apps, tooling, and clean web experiences."
+        },
+        "pinned": {
+            "projects": [
+                "xrooster",
+                "portfolio"
+            ],
+            "education": [
+                "talland-software-development",
+                "ict-vanaf-morgen"
+            ],
+            "skills": [
+                "csharp",
+                "blazor",
+                "flutter",
+                "dart",
+                "docker",
+                "linux",
+                "mysql",
+                "git",
+                "github-workflows",
+                "symfony"
+            ]
+        }
+    },
     "projects": [
         {
             "slug": "portfolio",

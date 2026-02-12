@@ -1,12 +1,43 @@
-using System.Collections.Generic;
-
 namespace portofolio.Models;
 
 public sealed class PortfolioConfig
 {
+    public SiteConfig Site { get; set; } = new();
+    public HomeConfig Home { get; set; } = new();
     public List<ProjectItem> Projects { get; set; } = new();
     public List<EducationItem> Education { get; set; } = new();
     public List<SkillItem> Skills { get; set; } = new();
+}
+
+public sealed class SiteConfig
+{
+    public string DisplayName { get; set; } = string.Empty;
+    public List<SocialLink> Social { get; set; } = new();
+}
+
+public sealed class SocialLink
+{
+    public string IconPath { get; set; } = string.Empty;
+    public string Url { get; set; } = string.Empty;
+}
+
+public sealed class HomeConfig
+{
+    public HomeHeroConfig Hero { get; set; } = new();
+    public HomePinnedConfig Pinned { get; set; } = new();
+}
+
+public sealed class HomeHeroConfig
+{
+    public string Title { get; set; } = string.Empty;
+    public string Summary { get; set; } = string.Empty;
+}
+
+public sealed class HomePinnedConfig
+{
+    public List<string> Projects { get; set; } = new();
+    public List<string> Education { get; set; } = new();
+    public List<string> Skills { get; set; } = new();
 }
 
 public sealed class ProjectItem

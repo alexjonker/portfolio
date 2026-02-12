@@ -1,12 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@inject PortfolioDataService Portfolio
+
+<!DOCTYPE html>
 
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <base href="/" />
-        <meta name="description" content="Software developer portfolio of Alex Jonker." />
-        <meta name="author" content="Alex Jonker">
+        <meta name="description" content="@($"Software developer portfolio of {Portfolio.Site.DisplayName}.")" />
+        <meta name="author" content="@Portfolio.Site.DisplayName">
         <ResourcePreloader />
         <link rel="stylesheet" href="@Assets["tailwind.css"]" />
         <ImportMap />
