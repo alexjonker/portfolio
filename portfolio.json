@@ -15,7 +15,7 @@
     "home": {
         "hero": {
             "title": "Alex Jonker",
-            "summary": "Software development student.\nI enjoy coding and homelabbing."
+            "summary": "Software development student from the Netherlands.\nI enjoy coding and homelabbing."
         },
         "pinned": {
             "projects": [
@@ -23,6 +23,7 @@
                 "portfolio"
             ],
             "education": [
+                "cambridge",
                 "talland-software-development",
                 "ict-vanaf-morgen"
             ],
@@ -176,6 +177,27 @@
             "description": "ICT Vanaf Morgen is a small local ICT company that refurbishes old computers and laptops.\nThey also do web development which is where I worked.\n\nI worked on a small internal tool to manage their Microsoft 365 licenses that they sell.\nI also worked on an internal tool to keep track of employee's attendance and hours.\n\nBoth projects were made with Symfony.\n\n\nI also updated some WordPress sites for clients.",
             "period": "2025 - 2026",
             "location": "ICT Vanaf Morgen Alkmaar, NL",
+            "skills": [
+                "php",
+                "symfony",
+                "git",
+                "github",
+                "wordpress"
+            ],
+            "links": [
+                {
+                    "label": "Their site",
+                    "url": "https://ictvanafmorgen.nl/"
+                }
+            ]
+        },
+        {
+            "slug": "cambridge",
+            "name": "B2 Cambridge English",
+            "summary": "Cambridge English certification.",
+            "description": "I took the Cambridge English exam in 2023 and got B2 level.",
+            "period": "2024",
+            "location": "Talland College Alkmaar, NL",
             "skills": [
                 "php",
                 "symfony",
