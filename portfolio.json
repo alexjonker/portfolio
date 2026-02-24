@@ -19,6 +19,7 @@
         },
         "pinned": {
             "projects": [
+                "miata-dash",
                 "xrooster",
                 "portfolio"
             ],
@@ -42,6 +43,25 @@
         }
     },
     "projects": [
+        {
+            "slug": "miata-dash",
+            "name": "Miata Dash",
+            "summary": "A Buildroot-based dashboard for a Miata.",
+            "description": "Building a dashboard for in my car running a pi3.\nThis will include android auto, a music player, maybe offline maps and more.\n\nCurrently there is no dashboard yet but the linux image builder with buildroot is working.",
+            "period": "2026",
+            "skills": [
+                "buildroot",
+                "bash",
+                "github",
+                "github-workflows"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/AlexJonker/miata-dash"
+                }
+            ]
+        },
         {
             "slug": "portfolio",
             "name": "Portfolio",
@@ -266,7 +286,7 @@
         {
             "slug": "mysql",
             "name": "MySQL/MariaDB",
-            "description": "Relational database management system for structured data storage."
+            "description": "Database system for storing data."
         },
         {
             "slug": "phpmyadmin",
@@ -276,7 +296,7 @@
         {
             "slug": "bash",
             "name": "Bash",
-            "description": "Unix shell used for scripting, automation, and server management."
+            "description": "Unix shell usefull for quick scripts in development."
         },
         {
             "slug": "flutter",
@@ -291,7 +311,7 @@
         {
             "slug": "github-workflows",
             "name": "GitHub Workflows",
-            "description": "CI/CD automation tool integrated with GitHub for streamlined development processes."
+            "description": "Github tool to automate tasks like building/compiling code, creating releases and more."
         },
         {
             "slug": "git",
@@ -301,12 +321,12 @@
         {
             "slug": "github",
             "name": "GitHub",
-            "description": "Web-based platform for hosting and collaborating on Git repositories."
+            "description": "Website that is used by developers and companies to host their repositories."
         },
         {
             "slug": "csharp",
             "name": "C#",
-            "description": "Modern, object-oriented programming language developed by Microsoft for building a wide range of applications."
+            "description": "Programming language developed by Microsoft.\nCan be used for websites, desktop applications, mobile applications and more."
         },
         {
             "slug": "blazor",
@@ -342,6 +362,11 @@
             "slug": "javascript",
             "name": "JavaScript",
             "description": "Programming language for websites, code that runs on the client-side in the browser."
+        },
+        {
+            "slug": "buildroot",
+            "name": "Buildroot",
+            "description": "Buildroot is a tool that simplifies building Linux images for devices like the Raspberry Pi."
         }
     ]
 }
