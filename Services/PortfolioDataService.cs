@@ -1,22 +1,23 @@
-using Microsoft.Extensions.Options;
 using portofolio.Models;
 
 namespace portofolio.Services;
 
 public sealed class PortfolioDataService
 {
-    private readonly IOptionsMonitor<PortfolioConfig> _options;
+    private readonly PortfolioContentProvider _provider;
 
-    public PortfolioDataService(IOptionsMonitor<PortfolioConfig> options)
+    public PortfolioDataService(PortfolioContentProvider provider)
     {
-        _options = options;
+        _provider = provider;
     }
 
-    public SiteConfig Site => _options.CurrentValue.Site;
-    public HomeConfig Home => _options.CurrentValue.Home;
-    public IReadOnlyList<ProjectItem> Projects => _options.CurrentValue.Projects;
-    public IReadOnlyList<EducationItem> Education => _options.CurrentValue.Education;
-    public IReadOnlyList<SkillItem> Skills => _options.CurrentValue.Skills;
+    private PortfolioContent Content => _provider.Current;
+
+    public SiteConfig Site => Content.Site;
+    public HomeConfig Home => Content.Home;
+    public IReadOnlyList<ProjectItem> Projects => Content.Projects;
+    public IReadOnlyList<EducationItem> Education => Content.Education;
+    public IReadOnlyList<SkillItem> Skills => Content.Skills;
 
     // Generic lookup by slug
     private static TItem? GetBySlug<TItem>(IEnumerable<TItem> items, string? slug) where TItem : class

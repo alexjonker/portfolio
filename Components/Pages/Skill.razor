@@ -13,7 +13,9 @@
         </header>
         
         <div class="mt-6 grid gap-4 text-sm text-neutral-700">
-            <p class="whitespace-pre-line">@_skill.Description</p>
+            <div class="grid gap-3 [&>p]:mt-0">
+                @((MarkupString)_skill.DescriptionHtml)
+            </div>
         </div>
 
         @if (_relatedProjects.Count > 0)
@@ -36,13 +38,14 @@
                 <div class="flex flex-wrap gap-3">
                     @foreach (var item in _relatedEducation)
                     {
-                        <a class="border border-neutral-200 bg-white px-4 py-2 text-sm transition-colors hover:border-neutral-400" href="@($"/education/{item.Slug}")" rel="noreferrer">@item.name</a>
+                        <a class="border border-neutral-200 bg-white px-4 py-2 text-sm transition-colors hover:border-neutral-400" href="@($"/education/{item.Slug}")" rel="noreferrer">@item.Name</a>
                     }
                 </div>
             </div>
         }
     </div>
 </section>
+
 
 
 @code {
@@ -63,12 +66,12 @@
         }
 
         _relatedProjects = Portfolio.Projects
-            .Where(project => project.skills.Any(skill =>
+            .Where(project => project.Skills.Any(skill =>
                 skill.Equals(_skill.Slug, StringComparison.OrdinalIgnoreCase)))
             .ToList();
 
         _relatedEducation = Portfolio.Education
-            .Where(item => item.skills.Any(skill =>
+            .Where(item => item.Skills.Any(skill =>
                 skill.Equals(_skill.Slug, StringComparison.OrdinalIgnoreCase)))
             .ToList();
     }

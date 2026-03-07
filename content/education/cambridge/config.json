@@ -1,0 +1,19 @@
+{
+  "name": {
+    "en": "B2 Cambridge English",
+    "nl": "B2 Cambridge English"
+  },
+  "summary": {
+    "en": "Cambridge English certification.",
+    "nl": "Cambridge English certification."
+  },
+  "period": "2024",
+  "location": {
+    "en": "Talland College Alkmaar, NL",
+    "nl": "Talland College Alkmaar, NL"
+  },
+  "skills": [
+    "english"
+  ],
+  "links": []
+}

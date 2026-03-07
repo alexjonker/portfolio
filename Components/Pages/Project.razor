@@ -30,7 +30,9 @@
                 </div>
             }
 
-            <p class="whitespace-pre-line text-sm text-neutral-700">@_project.Description</p>
+            <div class="grid gap-3 text-sm text-neutral-700 [&>p]:mt-0">
+                @((MarkupString)_project.DescriptionHtml)
+            </div>
             
             @if (_project.Links.Count > 0)
             {
@@ -44,6 +46,7 @@
         </div>
     </div>
 </section>
+
 
 
 @code {
@@ -62,6 +65,6 @@
             return;
         }
 
-        _linkedSkills = Portfolio.ResolveSkills(_project.skills);
+        _linkedSkills = Portfolio.ResolveSkills(_project.Skills);
     }
 }

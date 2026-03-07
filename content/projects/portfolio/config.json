@@ -1,0 +1,32 @@
+{
+  "name": {
+    "en": "Portfolio",
+    "nl": "Portfolio"
+  },
+  "summary": {
+    "en": "This portfolio website.",
+    "nl": "This portfolio website."
+  },
+  "period": "2026",
+  "skills": [
+    "csharp",
+    "blazor",
+    "html",
+    "tailwindcss",
+    "git",
+    "github",
+    "linux",
+    "docker",
+    "dockerfile",
+    "coolify"
+  ],
+  "links": [
+    {
+      "label": {
+        "en": "Homepage",
+        "nl": "Homepage"
+      },
+      "url": "https://alexjonker.dev"
+    }
+  ]
+}

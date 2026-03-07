@@ -1,0 +1,25 @@
+{
+  "name": {
+    "en": "CLI Racing Game",
+    "nl": "CLI Racing Game"
+  },
+  "summary": {
+    "en": "A simple command-line racing game.",
+    "nl": "A simple command-line racing game."
+  },
+  "period": "2025",
+  "skills": [
+    "python",
+    "git",
+    "github"
+  ],
+  "links": [
+    {
+      "label": {
+        "en": "GitHub",
+        "nl": "GitHub"
+      },
+      "url": "https://github.com/AlexJonker/cli-racing-game"
+    }
+  ]
+}

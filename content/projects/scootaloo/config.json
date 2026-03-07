@@ -1,0 +1,43 @@
+{
+  "name": {
+    "en": "Scootaloo",
+    "nl": "Scootaloo"
+  },
+  "summary": {
+    "en": "A chat app made with Django.",
+    "nl": "A chat app made with Django."
+  },
+  "period": "2025",
+  "skills": [
+    "python",
+    "django",
+    "html",
+    "css",
+    "mysql",
+    "git",
+    "github"
+  ],
+  "links": [
+    {
+      "label": {
+        "en": "GitHub",
+        "nl": "GitHub"
+      },
+      "url": "https://github.com/AlexJonker/scootaloo"
+    },
+    {
+      "label": {
+        "en": "Friend",
+        "nl": "Friend"
+      },
+      "url": "https://github.com/natas15"
+    },
+    {
+      "label": {
+        "en": "Friend",
+        "nl": "Friend"
+      },
+      "url": "https://github.com/Bm2404"
+    }
+  ]
+}

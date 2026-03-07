@@ -1,0 +1,38 @@
+{
+  "name": {
+    "en": "Software Development",
+    "nl": "Software Development"
+  },
+  "summary": {
+    "en": "Software development program at Talland College.",
+    "nl": "Software development program at Talland College."
+  },
+  "period": "2024 - present",
+  "location": {
+    "en": "Talland College Alkmaar, NL",
+    "nl": "Talland College Alkmaar, NL"
+  },
+  "skills": [
+    "php",
+    "django",
+    "python",
+    "mysql",
+    "csharp",
+    "blazor",
+    "git",
+    "github",
+    "wordpress",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "links": [
+    {
+      "label": {
+        "en": "More info",
+        "nl": "More info"
+      },
+      "url": "https://www.talland.nl/mbo/software-developer"
+    }
+  ]
+}

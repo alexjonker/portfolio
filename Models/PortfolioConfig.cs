@@ -1,7 +1,8 @@
 namespace portofolio.Models;
 
-public sealed class PortfolioConfig
+public sealed class PortfolioContent
 {
+    public string DefaultLanguage { get; set; } = "en";
     public SiteConfig Site { get; set; } = new();
     public HomeConfig Home { get; set; } = new();
     public List<ProjectItem> Projects { get; set; } = new();
@@ -30,7 +31,7 @@ public sealed class HomeConfig
 public sealed class HomeHeroConfig
 {
     public string Title { get; set; } = string.Empty;
-    public string Summary { get; set; } = string.Empty;
+    public string SummaryHtml { get; set; } = string.Empty;
 }
 
 public sealed class HomePinnedConfig
@@ -45,21 +46,21 @@ public sealed class ProjectItem
     public string Slug { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public string Summary { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
+    public string DescriptionHtml { get; set; } = string.Empty;
     public string Period { get; set; } = string.Empty;
-    public List<string> skills { get; set; } = new();
+    public List<string> Skills { get; set; } = new();
     public List<LinkItem> Links { get; set; } = new();
 }
 
 public sealed class EducationItem
 {
     public string Slug { get; set; } = string.Empty;
-    public string name { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
     public string Summary { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
+    public string DescriptionHtml { get; set; } = string.Empty;
     public string Period { get; set; } = string.Empty;
     public string Location { get; set; } = string.Empty;
-    public List<string> skills { get; set; } = new();
+    public List<string> Skills { get; set; } = new();
     public List<LinkItem> Links { get; set; } = new();
 }
 
@@ -67,7 +68,7 @@ public sealed class SkillItem
 {
     public string Slug { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
+    public string DescriptionHtml { get; set; } = string.Empty;
 }
 
 public sealed class LinkItem

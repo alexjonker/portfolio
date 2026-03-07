@@ -1,0 +1,26 @@
+{
+  "name": {
+    "en": "Miata Dash",
+    "nl": "Miata Dash"
+  },
+  "summary": {
+    "en": "A Buildroot-based dashboard for my Miata.",
+    "nl": "A Buildroot-based dashboard for my Miata."
+  },
+  "period": "2026",
+  "skills": [
+    "buildroot",
+    "bash",
+    "github",
+    "github-workflows"
+  ],
+  "links": [
+    {
+      "label": {
+        "en": "GitHub",
+        "nl": "GitHub"
+      },
+      "url": "https://github.com/AlexJonker/miata-dash"
+    }
+  ]
+}
