@@ -31,13 +31,13 @@
             }
 
             <div class="grid gap-3 text-sm text-neutral-700 [&>p]:mt-0">
-                @((MarkupString)_project?.DescriptionHtml)
+                @((MarkupString)(_project?.DescriptionHtml ?? string.Empty))
             </div>
             
             @if (_project?.Links.Count > 0)
             {
                 <div class="flex flex-wrap gap-3">
-                    @foreach (var link in _project?.Links)
+                    @foreach (var link in _project.Links)
                     {
                         <a class="border border-neutral-200 bg-white px-4 py-2 text-sm transition-colors hover:border-neutral-400" href="@link.Url" target="_blank" rel="noreferrer">@link.Label</a>
                     }
