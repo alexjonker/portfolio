@@ -16,7 +16,6 @@ public sealed class PortfolioContentProvider : IDisposable
     {
         _logger = logger;
         var contentPath = Path.Combine(env.ContentRootPath, "content");
-        Directory.CreateDirectory(contentPath);
 
         _fileProvider = new PhysicalFileProvider(contentPath);
         _content = LoadContent(contentPath);
