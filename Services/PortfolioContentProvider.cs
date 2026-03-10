@@ -62,7 +62,7 @@ public sealed class PortfolioContentProvider : IDisposable
                     Slug = c.Slug,
                     Name = ResolveLocalized(c.Config.Name, lang),
                     Summary = ResolveLocalized(c.Config.Summary, lang),
-                    DescriptionHtml = LoadHtml(c.Folder),
+                    Html = LoadHtml(c.Folder),
                     Period = c.Config.Period ?? string.Empty,
                     Skills = c.Config.Skills ?? new(),
                     Links = ResolveLinks(c.Config.Links, lang)
@@ -73,7 +73,7 @@ public sealed class PortfolioContentProvider : IDisposable
                     Slug = c.Slug,
                     Name = ResolveLocalized(c.Config.Name, lang),
                     Summary = ResolveLocalized(c.Config.Summary, lang),
-                    DescriptionHtml = LoadHtml(c.Folder),
+                    Html = LoadHtml(c.Folder),
                     Period = c.Config.Period ?? string.Empty,
                     Location = ResolveLocalized(c.Config.Location, lang),
                     Skills = c.Config.Skills ?? new(),
@@ -84,7 +84,7 @@ public sealed class PortfolioContentProvider : IDisposable
                 {
                     Slug = c.Slug,
                     Name = ResolveLocalized(c.Config.Name, lang),
-                    DescriptionHtml = LoadHtml(c.Folder)
+                    Html = LoadHtml(c.Folder)
                 })
         };
     }

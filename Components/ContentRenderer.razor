@@ -1,0 +1,66 @@
+@using System.Text.RegularExpressions
+
+<div class="@RootClass">
+    @foreach (var block in _blocks)
+    {
+        if (block.IsImage)
+        {
+            <button type="button" class="@ButtonClass" @onclick="(() => _activeImage = block)">
+                @((MarkupString)block.Tag)
+            </button>
+        }
+        else
+        {
+            @((MarkupString)block.Html)
+        }
+    }
+</div>
+
+@if (_activeImage is not null)
+{
+    <div class="cursor-pointer fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+         @onclick="(() => _activeImage = null)">
+        <div class="cursor-default relative max-h-[85vh]" @onclick:stopPropagation>
+            <button class="cursor-pointer absolute top-2 right-2 rounded-full bg-black/75 px-2.5 py-1.5 text-xs text-white"
+                    @onclick="(() => _activeImage = null)">
+                Close
+            </button>
+            <img class="max-h-[80vh] rounded-lg shadow-2xl"
+                 src="@_activeImage.Value.Src"
+                 alt="" />
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public string? Html { get; set; }
+    [Parameter] public string RootClass { get; set; } = "grid gap-3 text-sm text-neutral-700 [&>p]:mt-0";
+    [Parameter] public string ButtonClass { get; set; } = "inline-flex cursor-zoom-in";
+
+    private List<(bool IsImage, string? Html, string? Src, string Tag)> _blocks = new();
+    private (bool IsImage, string? Html, string? Src, string Tag)? _activeImage;
+
+    private static readonly Regex ImgRegex =
+        new("<img[^>]*src=[\"'](?<src>[^\"']+)[\"'][^>]*>", RegexOptions.IgnoreCase);
+
+    protected override void OnParametersSet()
+    {
+        _blocks.Clear();
+        if (Html is null) return;
+
+        var last = 0;
+
+        foreach (Match m in ImgRegex.Matches(Html))
+        {
+            if (m.Index > last)
+                _blocks.Add((false, Html[last..m.Index], null, ""));
+
+            _blocks.Add((true, null, m.Groups["src"].Value, m.Value));
+
+            last = m.Index + m.Length;
+        }
+
+        if (last < Html.Length)
+            _blocks.Add((false, Html[last..], null, ""));
+    }
+}

@@ -30,9 +30,7 @@
                 </div>
             }
 
-            <div class="grid gap-3 text-sm text-neutral-700 [&>p]:mt-0">
-                @((MarkupString)(_project?.DescriptionHtml ?? string.Empty))
-            </div>
+            <ContentRenderer Html="@_project?.Html" />
             
             @if (_project?.Links.Count > 0)
             {

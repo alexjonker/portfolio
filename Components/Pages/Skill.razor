@@ -13,9 +13,7 @@
         </header>
         
         <div class="mt-6 grid gap-4 text-sm text-neutral-700">
-            <div class="grid gap-3 [&>p]:mt-0">
-                @((MarkupString)(_skill?.DescriptionHtml ?? string.Empty))
-            </div>
+            <ContentRenderer Html="@_skill?.Html" RootClass="grid gap-3 [&>p]:mt-0" />
         </div>
 
         @if (_relatedProjects.Count > 0)
