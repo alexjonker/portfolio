@@ -3,10 +3,21 @@
 <div class="@RootClass">
     @foreach (var block in _blocks)
     {
-        if (block.IsImage)
+        if (block.IsContainer)
         {
-            <button type="button" class="@ButtonClass" @onclick="(() => _activeImage = block)">
-                @((MarkupString)block.Tag)
+            <div class="@block.ContainerAttributes.GetValueOrDefault("class","")">
+                @foreach (var img in block.Images)
+                {
+                    <button type="button" class="@ButtonClass" @onclick="() => _activeImage = img">
+                        <img src="@img.Src" alt="@img.Alt" width="@img.Width" class="cursor-zoom-in" />
+                    </button>
+                }
+            </div>
+        }
+        else if (block.Image is not null)
+        {
+            <button type="button" class="@ButtonClass" @onclick="() => _activeImage = block.Image">
+                <img src="@block.Image.Src" alt="@block.Image.Alt" width="@block.Image.Width" class="cursor-zoom-in" />
             </button>
         }
         else
@@ -19,15 +30,15 @@
 @if (_activeImage is not null)
 {
     <div class="cursor-pointer fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-         @onclick="(() => _activeImage = null)">
+         @onclick="() => _activeImage = null">
         <div class="cursor-default relative max-h-[85vh]" @onclick:stopPropagation>
             <button class="cursor-pointer absolute top-2 right-2 rounded-full bg-black/75 px-2.5 py-1.5 text-xs text-white"
-                    @onclick="(() => _activeImage = null)">
+                    @onclick="() => _activeImage = null">
                 Close
             </button>
             <img class="max-h-[80vh] rounded-lg shadow-2xl"
-                 src="@_activeImage.Value.Src"
-                 alt="" />
+                 src="@_activeImage.Src"
+                 alt="@_activeImage.Alt" />
         </div>
     </div>
 }
@@ -37,30 +48,115 @@
     [Parameter] public string RootClass { get; set; } = "grid gap-3 text-sm text-neutral-700 [&>p]:mt-0";
     [Parameter] public string ButtonClass { get; set; } = "inline-flex cursor-zoom-in";
 
-    private List<(bool IsImage, string? Html, string? Src, string Tag)> _blocks = new();
-    private (bool IsImage, string? Html, string? Src, string Tag)? _activeImage;
+    private class ImageBlock
+    {
+        public string Src = "";
+        public string Alt = "";
+        public string Width = "200";
+    }
 
-    private static readonly Regex ImgRegex =
-        new("<img[^>]*src=[\"'](?<src>[^\"']+)[\"'][^>]*>", RegexOptions.IgnoreCase);
+    private class Block
+    {
+        public bool IsContainer = false;
+        public List<ImageBlock> Images = new();
+        public ImageBlock? Image;
+        public string Html = "";
+        public Dictionary<string, object>? ContainerAttributes;
+    }
+
+    private List<Block> _blocks = new();
+    private ImageBlock? _activeImage;
 
     protected override void OnParametersSet()
     {
         _blocks.Clear();
         if (Html is null) return;
 
-        var last = 0;
+        int lastIndex = 0;
 
-        foreach (Match m in ImgRegex.Matches(Html))
+        var divMatches = Regex.Matches(Html, @"<div([^>]*)>(.*?)</div>", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+
+        foreach (Match div in divMatches)
+        {
+            if (div.Index > lastIndex)
+            {
+                var htmlSegment = Html[lastIndex..div.Index];
+                ExtractStandaloneImages(htmlSegment);
+            }
+
+            var innerHtml = div.Groups[2].Value;
+            var containerBlock = new Block
+            {
+                IsContainer = true,
+                ContainerAttributes = ParseAttributes(div.Groups[1].Value),
+            };
+
+            foreach (Match img in Regex.Matches(innerHtml, @"<img[^>]*>", RegexOptions.IgnoreCase))
+            {
+                var src = Regex.Match(img.Value, @"src=['""](?<src>[^'""]+)['""]").Groups["src"].Value;
+                var alt = Regex.Match(img.Value, @"alt=['""](?<alt>[^'""]*)['""]").Groups["alt"].Value;
+                var width = Regex.Match(img.Value, @"width=['""](?<width>[^'""]*)['""]").Groups["width"].Value;
+
+                containerBlock.Images.Add(new ImageBlock
+                {
+                    Src = src,
+                    Alt = alt,
+                    Width = string.IsNullOrEmpty(width) ? "200" : width
+                });
+            }
+
+            _blocks.Add(containerBlock);
+            lastIndex = div.Index + div.Length;
+        }
+
+        if (lastIndex < Html.Length)
+        {
+            ExtractStandaloneImages(Html[lastIndex..]);
+        }
+    }
+
+    private void ExtractStandaloneImages(string html)
+    {
+        var last = 0;
+        foreach (Match m in Regex.Matches(html, @"<img[^>]*>", RegexOptions.IgnoreCase))
         {
             if (m.Index > last)
-                _blocks.Add((false, Html[last..m.Index], null, ""));
+            {
+                _blocks.Add(new Block { Html = html[last..m.Index] });
+            }
 
-            _blocks.Add((true, null, m.Groups["src"].Value, m.Value));
+            var src = Regex.Match(m.Value, @"src=['""](?<src>[^'""]+)['""]").Groups["src"].Value;
+            var alt = Regex.Match(m.Value, @"alt=['""](?<alt>[^'""]*)['""]").Groups["alt"].Value;
+            var width = Regex.Match(m.Value, @"width=['""](?<width>[^'""]*)['""]").Groups["width"].Value;
+
+            _blocks.Add(new Block
+            {
+                IsContainer = false,
+                Image = new ImageBlock
+                {
+                    Src = src,
+                    Alt = alt,
+                    Width = string.IsNullOrEmpty(width) ? "200" : width
+                }
+            });
 
             last = m.Index + m.Length;
         }
 
-        if (last < Html.Length)
-            _blocks.Add((false, Html[last..], null, ""));
+        if (last < html.Length)
+        {
+            _blocks.Add(new Block { Html = html[last..] });
+        }
+    }
+
+    private Dictionary<string, object> ParseAttributes(string attrString)
+    {
+        var dict = new Dictionary<string, object>();
+        var regex = new Regex(@"(\w+)=(['""])(.*?)\2");
+        foreach (Match m in regex.Matches(attrString))
+        {
+            dict[m.Groups[1].Value] = m.Groups[3].Value;
+        }
+        return dict;
     }
 }
