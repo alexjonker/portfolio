@@ -1,6 +1,6 @@
 @using System.Text.RegularExpressions
 
-<div class="@RootClass">
+<div>
     @foreach (var block in _blocks)
     {
         if (block.IsContainer)
@@ -45,7 +45,6 @@
 
 @code {
     [Parameter] public string? Html { get; set; }
-    [Parameter] public string RootClass { get; set; } = "grid gap-3 text-sm text-neutral-700 [&>p]:mt-0";
     [Parameter] public string ButtonClass { get; set; } = "inline-flex cursor-zoom-in";
 
     private class ImageBlock
