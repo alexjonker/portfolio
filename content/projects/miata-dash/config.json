@@ -4,23 +4,31 @@
     "nl": "Miata Dash"
   },
   "summary": {
-    "en": "A Buildroot-based dashboard for my Miata.",
-    "nl": "A Buildroot-based dashboard for my Miata."
+    "en": "A dashboard running on a Raspberry Pi for my Miata.",
+    "nl": "A dashboard running on a Raspberry Pi for my Miata."
   },
   "period": "2026",
   "skills": [
-    "buildroot",
+    "linux",
     "bash",
     "github",
-    "github-workflows"
+    "github-workflows",
+    "rust"
   ],
   "links": [
     {
       "label": {
-        "en": "GitHub",
-        "nl": "GitHub"
+        "en": "System GitHub",
+        "nl": "System GitHub"
       },
       "url": "https://github.com/AlexJonker/miata-dash"
+    },
+    {
+      "label": {
+        "en": "Dashboard GitHub",
+        "nl": "Dashboard GitHub"
+      },
+      "url": "https://github.com/AlexJonker/dash"
     }
   ]
 }
