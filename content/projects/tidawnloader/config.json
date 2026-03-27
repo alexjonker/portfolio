@@ -1,0 +1,37 @@
+{
+  "name": {
+    "en": "Tidawnloader",
+    "nl": "Tidawnloader"
+  },
+  "summary": {
+    "en": "Self hosted tidal music downloader/manager.",
+    "nl": "Self hosted tidal music downloader/manager."
+  },
+  "period": "2026",
+  "skills": [
+    "linux",
+    "github",
+    "github-workflows",
+    "csharp",
+    "blazor",
+    "docker",
+    "docker-compose",
+    "dockerfile"
+  ],
+  "links": [
+    {
+      "label": {
+        "en": "System GitHub",
+        "nl": "System GitHub"
+      },
+      "url": "https://github.com/AlexJonker/tidawnloader"
+    },
+    {
+      "label": {
+        "en": "Monochrome",
+        "nl": "Monochrome"
+      },
+      "url": "https://Monochrome.tf"
+    }
+  ]
+}

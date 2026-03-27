@@ -19,6 +19,7 @@
     },
     "pinned": {
       "projects": [
+        "tidawnloader",
         "miata-dash",
         "xrooster",
         "portfolio"
