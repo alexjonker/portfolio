@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Miata Dash",
-    "nl": "Miata Dash"
+    "en": "Rusty Dash",
+    "nl": "Rusty Dash"
   },
   "summary": {
     "en": "A dashboard running on a Raspberry Pi for my Miata.",
@@ -21,14 +21,7 @@
         "en": "System GitHub",
         "nl": "System GitHub"
       },
-      "url": "https://github.com/AlexJonker/miata-dash"
-    },
-    {
-      "label": {
-        "en": "Dashboard GitHub",
-        "nl": "Dashboard GitHub"
-      },
-      "url": "https://github.com/AlexJonker/dash"
+      "url": "https://github.com/AlexJonker/rusty-dash"
     }
   ]
 }
