@@ -18,8 +18,8 @@
   "links": [
     {
       "label": {
-        "en": "System GitHub",
-        "nl": "System GitHub"
+        "en": "GitHub",
+        "nl": "GitHub"
       },
       "url": "https://github.com/AlexJonker/rusty-dash"
     }
