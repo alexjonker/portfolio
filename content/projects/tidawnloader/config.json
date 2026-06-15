@@ -16,7 +16,8 @@
     "blazor",
     "docker",
     "docker-compose",
-    "dockerfile"
+    "dockerfile",
+    "tailwindcss"
   ],
   "links": [
     {
