@@ -32,11 +32,11 @@
     <div class="cursor-pointer fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
          @onclick="() => _activeImage = null">
         <div class="cursor-default relative max-h-[85vh]" @onclick:stopPropagation>
-            <button class="cursor-pointer absolute top-2 right-2 rounded-full bg-black/75 px-2.5 py-1.5 text-xs text-white"
+            <button class="cursor-pointer absolute top-2 right-2 bg-black/75 px-2.5 py-1.5 text-xs text-white"
                     @onclick="() => _activeImage = null">
                 Close
             </button>
-            <img class="max-h-[80vh] rounded-lg shadow-2xl"
+            <img class="max-h-[80vh] shadow-2xl"
                  src="@_activeImage.Src"
                  alt="@_activeImage.Alt" />
         </div>
