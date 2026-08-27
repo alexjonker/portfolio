@@ -1,2 +1,38 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'CaskaydiaCove Nerd Font Mono';
+  src: url('/fonts/CaskaydiaCoveNerdFontMono-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CaskaydiaCove Nerd Font Mono';
+  src: url('/fonts/CaskaydiaCoveNerdFontMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CaskaydiaCove Nerd Font Mono';
+  src: url('/fonts/CaskaydiaCoveNerdFontMono-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CaskaydiaCove Nerd Font Mono';
+  src: url('/fonts/CaskaydiaCoveNerdFontMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+html {
+  font-family: 'CaskaydiaCove Nerd Font Mono', ui-monospace, monospace;
+}
