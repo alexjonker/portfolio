@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Rusty Dash",
-    "nl": "Rusty Dash"
+    "en": "Nowa Dash",
+    "nl": "Nowa Dash"
   },
   "summary": {
     "en": "A dashboard running on a Raspberry Pi for my Miata.",
@@ -22,7 +22,7 @@
         "en": "GitHub",
         "nl": "GitHub"
       },
-      "url": "https://github.com/AlexJonker/rusty-dash"
+      "url": "https://github.com/nowa-dash/nowa"
     }
   ]
 }
