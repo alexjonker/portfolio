@@ -1,3 +1,40 @@
 footer {
-    background-color: red;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-inline: clamp(16px, 7vw, 100px);
+    margin-block: clamp(12px, 1.5vw, 20px);
+}
+
+.footer-line {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text);
+}
+
+.footer-line span {
+    color: var(--accent);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent-hover);
+}
+
+.footer-links a::before {
+    content: "~/";
+    color: var(--accent);
 }
