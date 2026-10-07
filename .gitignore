@@ -17,3 +17,6 @@ obj/
 *.log
 .DS_Store
 Thumbs.db
+
+# Some local personal notes
+/Notes
