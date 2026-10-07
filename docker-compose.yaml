@@ -1,0 +1,8 @@
+services:
+  portfolio:
+    image: ghcr.io/alexjonker/portfolio:latest
+    # build: .
+    container_name: portfolio
+    restart: unless-stopped
+    ports:
+      - "4675:8080"

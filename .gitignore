@@ -1,8 +1,19 @@
+## .NET build artifacts
 bin/
 obj/
-cache/
+*.user
 
-*.sln
+## Visual Studio
+.vs/
+.vscode/
+*.suo
+*.userosscache
+*.sln.docstates
 
-node_modules/
-tailwind.css
+## Rider
+.idea/
+
+## Misc
+*.log
+.DS_Store
+Thumbs.db
