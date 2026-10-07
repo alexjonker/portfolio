@@ -1,3 +1,61 @@
 nav {
-    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-inline: clamp(16px, 7vw, 100px);
+    margin-block: clamp(12px, 1.5vw, 20px);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    font-family: monospace;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.logo:hover {
+    color: var(--accent-hover);
+}
+
+.logo::after {
+    content: "";
+    width: 1ch;
+    margin-left: 1ch;
+    align-self: stretch;
+    background: var(--text);
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo::after {
+        animation: none;
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.nav-links a {
+    transition: color .2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text);
 }
