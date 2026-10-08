@@ -40,6 +40,8 @@ const onLinkEnter = (event) => {
         command = ' cd ~/';
     } else if (href?.startsWith('https:')) {
         command = ` xdg-open ~/Desktop/${linkName}.desktop`;
+    } else if (href?.startsWith('#')) {
+        command = ` ~/Scripts/${linkName}.sh`;
     } else {
         command = ` cd ~/${linkName}`;
     }
