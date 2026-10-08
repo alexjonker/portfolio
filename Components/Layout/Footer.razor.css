@@ -2,9 +2,10 @@ footer {
     font-family: var(--font-mono);
     font-size: 14px;
     line-height: 1.6;
+    
+    padding-block: 24px;
 
-    margin-inline: clamp(16px, 7vw, 100px);
-    margin-block: clamp(12px, 1.5vw, 20px);
+    border-top: 1px solid var(--border);
 }
 
 p {
@@ -20,12 +21,12 @@ span {
     opacity: .7;
 }
 
-.footer-links,
+nav,
 .site-info {
     margin-left: 1ch;
 }
 
-.footer-links {
+nav {
     display: flex;
     flex-wrap: wrap;
     gap: 0 2ch;

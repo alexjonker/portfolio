@@ -1,18 +1,20 @@
-nav {
+header {
     font-family: var(--font-mono);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-block: 24px;
 
-    margin-inline: clamp(16px, 7vw, 100px);
-    margin-block: clamp(12px, 1.5vw, 20px);
+    border-bottom: 1px solid var(--border);
 }
 
 .logo {
     display: inline-flex;
     align-items: center;
     color: var(--text);
+
+    font-size: 20px;
 }
 
 .logo:hover {
@@ -35,7 +37,7 @@ span {
     color: var(--accent);
 }
 
-.nav-links {
+nav {
     display: flex;
     gap: 20px;
 }
@@ -50,12 +52,12 @@ a {
     margin: -20px -10px;
 }
 
-a:hover,
-a:hover::before {
+nav a:hover,
+nav a:hover::before {
     color: var(--accent-hover);
 }
 
-a::before {
+nav a::before {
     content: "~/";
     color: var(--accent);
 }
