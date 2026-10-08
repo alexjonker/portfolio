@@ -48,8 +48,7 @@ a:hover::before {
 }
 
 a::before {
-    /* https://www.nerdfonts.com/cheat-sheet?q=eb70 */
-    content: "\eb70  ";
+    content: "> ";
     color: var(--accent);
 }
 
