@@ -10,8 +10,6 @@
     --accent: #7daea3;
     --accent-hover: #B69254;
 
-    --font-mono: "CaskaydiaCove NF Mono", monospace;
-
     --padding-inline: clamp(16px, 7vw, 100px);
 }
 
@@ -57,7 +55,7 @@ body {
     background: var(--bg);
     color: var(--text);
 
-    font-family: Inter, sans-serif;
+    font-family: "CaskaydiaCove NF Mono", monospaces;
 }
 
 a {

@@ -1,6 +1,4 @@
 header {
-    font-family: var(--font-mono);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
