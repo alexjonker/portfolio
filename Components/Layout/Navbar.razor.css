@@ -1,6 +1,6 @@
 nav {
     font-family: var(--font-mono);
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,22 +26,13 @@ nav {
 .logo::after {
     content: "";
     width: 1ch;
-    margin-left: 1ch;
     align-self: stretch;
     background: var(--text);
-    animation: blink 1s steps(1) infinite;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .logo::after {
-        animation: none;
-    }
+#logo-typing {
+    margin-left: 1ch;
+    color: var(--accent-hover)
 }
 
 .nav-links {
@@ -53,6 +44,10 @@ nav {
     color: var(--text);
     text-decoration: none;
     font-size: 14px;
+
+    /* Make clickable area bigger */
+    padding: 20px 10px;
+    margin: -20px -10px;
 }
 
 .nav-links a:hover {
