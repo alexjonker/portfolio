@@ -4,6 +4,7 @@ footer {
     line-height: 1.6;
     
     padding-block: 24px;
+    padding-inline: var(--padding-inline);
 
     border-top: 1px solid var(--border);
 }
