@@ -15,10 +15,6 @@ nav {
     color: var(--text);
 }
 
-.logo span {
-    color: var(--accent);
-}
-
 .logo:hover {
     color: var(--accent-hover);
 }
@@ -35,12 +31,16 @@ nav {
     color: var(--accent-hover)
 }
 
+span {
+    color: var(--accent);
+}
+
 .nav-links {
     display: flex;
     gap: 20px;
 }
 
-.nav-links a {
+a {
     color: var(--text);
     text-decoration: none;
     font-size: 14px;
@@ -50,11 +50,12 @@ nav {
     margin: -20px -10px;
 }
 
-.nav-links a:hover {
+a:hover,
+a:hover::before {
     color: var(--accent-hover);
 }
 
-.nav-links a::before {
+a::before {
     content: "~/";
     color: var(--accent);
 }

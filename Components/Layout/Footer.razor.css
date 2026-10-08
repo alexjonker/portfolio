@@ -7,16 +7,16 @@ footer {
     margin-block: clamp(12px, 1.5vw, 20px);
 }
 
-footer p {
+p {
     margin: 0;
     color: var(--text);
 }
 
-footer p span {
+span {
     color: var(--accent);
 }
 
-footer .site-info {
+.site-info {
     opacity: .7;
 }
 
@@ -31,7 +31,7 @@ footer .site-info {
     gap: 0 2ch;
 }
 
-.footer-links a {
+a {
     color: var(--text);
     text-decoration: none;
 
@@ -41,8 +41,15 @@ footer .site-info {
     margin: -20px -10px;
 }
 
-.footer-links a:hover {
+a:hover,
+a:hover::before {
     color: var(--accent-hover);
+}
+
+a::before {
+    /* https://www.nerdfonts.com/cheat-sheet?q=eb70 */
+    content: "\eb70  ";
+    color: var(--accent);
 }
 
 /* block cursor */
