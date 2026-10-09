@@ -3,6 +3,7 @@
     --surface: #282828;
     --surface-hover: #303030;
     --border: #3c3836;
+    --border-hover: #504945;
     --border-radius: 6px;
 
     --text: #ebdbb2;
@@ -24,6 +25,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
     line-height: 1.2;
 }
 
@@ -76,7 +78,7 @@ pre {
 
 .button.secondary:hover {
     background: var(--surface);
-    border-color: #504945;
+    border-color: var(--border-hover);
 }
 
 .tag {
