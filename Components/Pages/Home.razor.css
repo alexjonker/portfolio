@@ -115,10 +115,11 @@ section {
 
 /* ABOUT ME */
 .about-grid {
-    position: relative;
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
     gap: 60px;
+
+    align-items: center;
 }
 
 .about-text {
@@ -137,13 +138,6 @@ section {
 
 /* Terminal window */
 .term {
-    position: absolute;
-    left: calc(1.3 / 2 * 100% + 30px);
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: calc(0.7 / 2 * 100% - 30px);
-
     background: var(--surface);
     border: 1px solid var(--border) ;
     border-radius: var(--border-radius);
@@ -193,4 +187,9 @@ section {
 
 .term-output {
     margin-left: 1ch;
+}
+
+.term-output span {
+  display: inline-block;
+  min-width: 10ch;
 }
