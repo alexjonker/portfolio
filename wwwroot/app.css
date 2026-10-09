@@ -3,6 +3,7 @@
     --surface: #282828;
     --surface-hover: #303030;
     --border: #3c3836;
+    --border-radius: 6px;
 
     --text: #ebdbb2;
     --muted: #a89984;
@@ -42,4 +43,48 @@ a {
 code,
 pre {
     font-family: inherit;
+}
+
+/* Reusable Components */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 10px 17px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+
+    font-size: 14px;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.button.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #1d2021;
+    font-weight: 600;
+}
+
+.button.primary:hover {
+    background: var(--accent-hover);
+}
+
+.button.secondary:hover {
+    background: var(--surface);
+    border-color: #504945;
+}
+
+.tag {
+    padding: 5px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+
+    color: var(--muted);
+    font-size: 12px;
 }

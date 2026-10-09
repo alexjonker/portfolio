@@ -1,4 +1,3 @@
-main {
-    margin-block: 24px;
+main {   
     padding-inline: var(--padding-inline);
 }

@@ -3,28 +3,31 @@
 <PageTitle>Alex Jonker - home</PageTitle>
 
 <section class="hero">
-    <div class="container">
-        <h1>
-            Alex Jonker<span>.</span>
-        </h1>
+    <h1>
+        Alex Jonker<span>.</span>
+    </h1>
 
-        <pre class="hero-description">
-I'm a student Software Developer from the Netherlands.
-I enjoy coding and homelabbing.
-        </pre>
+    <div class="description">
+        <p>
+            I'm a student Software Developer from the Netherlands.
+        </p>
+        <p>
+            I enjoy coding and homelabbing.
+        </p>
+    </div>
 
-        <div class="actions">
-            <a href="#projects" class="button primary">
-                View projects
-            </a>
+    <div class="actions">
+        <a href="#projects" class="button primary">
+            View projects
+        </a>
 
-            <a href="#contact" class="button secondary">
-                Contact me
-            </a>
-        </div>
+        <a href="#contact" class="button secondary">
+            Contact me
+        </a>
     </div>
 </section>
 
+@* TECH STACK *@
 <section id="stack">
     <span class="stack-label">
         STACK
@@ -38,15 +41,64 @@ I enjoy coding and homelabbing.
     <span class="tag">Git</span>
 </section>
 
+@* PROJECTS *@
+
+@code {
+
+    record Project(string Name, string Description, string[] Tags);
+
+    static readonly Project[] Projects =
+    [
+        new("nowa-dash",
+            "An open-source Raspberry Pi dashboard built using Arch Linux ARM, Labwc and Quickshell.",
+            ["Linux", "Raspberry Pi"]),
+
+        new("xrooster",
+            "A Flutter app for viewing your school schedule from MyX.",
+            ["Flutter", "Dart", "Android"]),
+
+        new("homelab",
+            "A Proxmox-based homelab running Docker, self-hosted services and infrastructure for projects and everyday use.",
+            ["Proxmox", "Docker", "Linux"]),
+
+        new("portfolio",
+            "A portfolio built with C# and Blazor, running on Linux using Docker.",
+            ["C#", "Blazor", "Docker"]),
+    ];
+
+}
+
 <section id="projects">
-    <h3>Projects</h3>
+    <div class="section-header">
+        <h2>Projects</h2>
+        <a class="button secondary" href="/projects">View all</a>
+    </div>
+
+    <div class="projects">
+        @foreach (var project in Projects)
+        {
+            <a href="/projects/@project.Name" class="project">
+                <h3>@project.Name</h3>
+                <p>@project.Description</p>
+                <div class="project-tags">
+                    @foreach (var tag in project.Tags)
+                    {
+                        <span class="tag">@tag</span>
+                    }
+                </div>
+            </a>
+        }
+    </div>
 </section>
 
+@* ABOUT ME *@
 <section id="about">
-    <h3>About Me</h3>
+    <h2>About Me</h2>
 </section>
 
+
+@* CONTACT *@
 <section id="contact">
-    <h3>Contact</h3>
+    <h2>Contact</h2>
 </section>
 
