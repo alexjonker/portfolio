@@ -31,4 +31,7 @@ public static class ProjectData
             "A portfolio made with C# and Blazor, running on Linux using Docker.",
             ["Linux", "C#", "Blazor", "Docker"]),
     ];
+
+    public static Project Get(string name) =>
+        AllProjectsList.First(p => p.Name == name);
 }

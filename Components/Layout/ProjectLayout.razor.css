@@ -1,0 +1,32 @@
+div {
+    margin-block: 20px;
+}
+
+section {
+    margin-block: 80px;
+}
+
+/* HERO */
+.hero h1 {
+    margin: 0;
+
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    font-weight: 650;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 36px 0;
+
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.2;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}

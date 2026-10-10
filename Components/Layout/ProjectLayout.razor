@@ -1,0 +1,20 @@
+<PageTitle>Alex Jonker - @Project.Name</PageTitle>
+
+<div>
+    <a href="/projects" class="button secondary">Back to all projects</a>
+
+    <section class="hero">
+        <h1>@Project.Name</h1>
+        <p>@Project.Description</p>
+    </section>
+</div>
+
+<article>
+    @ChildContent
+</article>
+
+@code
+{
+    [Parameter] public required Project Project { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}
