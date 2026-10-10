@@ -1,0 +1,32 @@
+@page "/projects"
+
+<PageTitle>Alex Jonker - Projects</PageTitle>
+
+<section class="hero">
+    <h1>Projects</h1>
+
+    <div class="description">
+        <p>
+            These are all of the projects I have made.
+        </p>
+        <p>
+            This includes both single projects and projects made in a group.
+        </p>
+    </div>
+</section>
+
+<section id="projects" class="projects">
+    @foreach (var project in ProjectData.AllProjectsList)
+    {
+        <a href="/projects/@project.Name" class="project">
+            <h3>@project.Name</h3>
+            <p>@project.Description</p>
+            <div class="project-tags">
+                @foreach (var tag in project.Tags)
+                {
+                    <span class="tag">@tag</span>
+                }
+            </div>
+        </a>
+    }
+</section>
