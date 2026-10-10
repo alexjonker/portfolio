@@ -60,7 +60,7 @@ section {
 }
 
 .section-header a {
-    /* color: var(--muted); */
+    color: var(--muted);
     font-size: 12px;
 }
 
@@ -192,4 +192,9 @@ section {
 .term-output span {
   display: inline-block;
   min-width: 10ch;
+}
+
+/* CONTACT */
+.contact-content p {
+    color: var(--muted);
 }
