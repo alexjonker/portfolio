@@ -46,7 +46,7 @@ nav {
     gap: 20px;
 }
 
-a {
+nav a {
     color: var(--text);
     text-decoration: none;
     font-size: 14px;
