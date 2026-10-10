@@ -1,6 +1,25 @@
 @page "/projects/nowa-dash"
 
 <ProjectLayout Project="@ProjectData.Get("nowa-dash")">
-    <h2>How it works</h2>
-    <p>Idk</p>
+    <h2>Why?</h2>
+    @* TODO: make this better *@
+    <div>
+        <p>When I bought my miata it had an old aftermarket radio which could only play cd's.</p>
+        <p>So very quickly I wanted to modernize it so I could use android auto, bluetooth for music, and more.</p>
+        <p>I already had a Raspberry Pi and a touchscreen for it laying around.</p>
+        <p>Online I found some video's showing a project named <a href="https://github.com/opencardev/crankshaft">crankshaft-ng</a>. It was basically excactly what I needed.</p>
+        <p>But I didn't like the ui, it kept crashing and it looked unmaintained.</p>
+        <br>
+        <p>So I decided to create my own.</p>
+        <p>After a lot of trail and error I ended up with archlinuxarm, labwc and quickshell.</p>
+        <p>I believe this is the simplest because I can just download any external app I want and get it to work.</p>
+    </div>
+
+    <h2>Gallery:</h2>
+    <div class="gallery">
+        <img src="@Assets["content/nowa-dash/main.jpg"]" alt="Home screen"/>
+        <img src="@Assets["content/nowa-dash/android-auto.jpg"]" alt="Android auto screen"/>
+        <img src="@Assets["content/nowa-dash/music.jpg"]" alt="Music player screen"/>
+        <img src="@Assets["content/nowa-dash/files.jpg"]" alt="Files browser screen"/>
+    </div>
 </ProjectLayout>

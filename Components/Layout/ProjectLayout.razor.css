@@ -30,3 +30,27 @@ section {
     display: flex;
     gap: 12px;
 }
+
+article {
+    margin-bottom: 80px;
+}
+
+
+/* CSS INSIDE THE PROJECT PAGES */
+article ::deep a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+article ::deep .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+article ::deep .gallery img {
+    border-radius: var(--border-radius);
+    border: 5px solid var(--accent);
+    flex: 1 1 250px;
+    min-width: 0;
+}
