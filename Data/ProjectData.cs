@@ -6,23 +6,28 @@ public static class ProjectData
 {
     public static readonly Project[] AllProjectsList =
     [
-        new("nowa-dash",
+        new(true,
+            "nowa-dash",
             "A Raspberry Pi dashboard made using Arch Linux ARM, Labwc and Quickshell.",
             ["Linux", "Raspberry Pi"]),
 
-        new("tidawnloader",
+        new(true,
+            "tidawnloader",
             "A self-hosted app to download music from tidal. Made with C# and Blazor",
             ["Linux", "C#", "Blazor", "Docker"]),
 
-        new("xrooster",
+        new(true,
+            "xrooster",
             "A Flutter app for viewing your school schedule from MyX.",
             ["Flutter", "Dart", "Android"]),
 
-        new("homelab",
+        new(true,
+            "homelab",
             "A Proxmox-based homelab running Docker, self-hosted services and infrastructure for projects and everyday use.",
             ["Proxmox", "Docker", "Linux"]),
 
-        new("portfolio",
+        new(false,
+            "portfolio",
             "A portfolio made with C# and Blazor, running on Linux using Docker.",
             ["Linux", "C#", "Blazor", "Docker"]),
     ];

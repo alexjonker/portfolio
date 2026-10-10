@@ -44,23 +44,26 @@
 @* PROJECTS *@
 <section id="projects">
     <div class="section-header">
-        <h2>Projects</h2>
+        <h2>Featured Projects</h2>
         <a class="button secondary" href="/projects">View all</a>
     </div>
 
     <div class="projects">
         @foreach (var project in ProjectData.AllProjectsList)
         {
-            <a href="/projects/@project.Name" class="project">
-                <h3>@project.Name</h3>
-                <p>@project.Description</p>
-                <div class="project-tags">
-                    @foreach (var tag in project.Tags)
-                    {
-                        <span class="tag">@tag</span>
-                    }
-                </div>
-            </a>
+            @if (project.Featured)
+            {
+                <a href="/projects/@project.Name" class="project">
+                    <h3>@project.Name</h3>
+                    <p>@project.Description</p>
+                    <div class="project-tags">
+                        @foreach (var tag in project.Tags)
+                        {
+                            <span class="tag">@tag</span>
+                        }
+                    </div>
+                </a>
+            }
         }
     </div>
 </section>
