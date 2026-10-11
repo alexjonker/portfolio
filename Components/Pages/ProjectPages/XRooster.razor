@@ -1,6 +1,56 @@
 @page "/projects/xrooster"
 
 <ProjectLayout Project="@ProjectData.Get("xrooster")">
-    <h2>How it works</h2>
-    <p>Idk</p>
+    <div>
+        <h2>What?</h2>
+        <p>Together with <a href="https://github.com/kietelmuis/">a friend</a> we made a schedule app for <a href="https://myx.nl">MyX</a>. We called it xrooster because MyX is from a company called Xedule, which is somewhat close to Xrooster when you translate it to Dutch.</p>
+        <p>The app shows your school schedule in a clean and simple way.</p>
+        <p>The app has a schedule page, an extra info tab for each lesson, a search page and a settings page.</p>
+        <p>You can also look up any class or teacher and see their schedule. This is very useful when trying to find a teacher when you need to ask something.</p>
+        <p>The app works for multiple schools which can be found <a href="https://github.com/PhoebeSoftware/xrooster#ondersteunde-scholen">here</a>.</p>
+    </div>
+
+    <div>
+        <h2>Why?</h2>
+        <p>Our school used an app called Eduarte to show our schedules. We had to use it every day, but we did not like it.</p>
+        <p>The login was buggy and only worked with a workaround, and the schedule was only a list. We show it nicely in a calendar view (see picture 1).</p>
+        <p>The original app also didn't have any customization at all.</p>
+        <p>And most importantly, the original app had no offline mode. So having slow or no internet would mean you can't see your schedule.</p>
+    </div>
+
+    <div>
+        <h2>How?</h2>
+        <p>The app is made with Flutter, making it easy to develop on Linux and Windows and release to Android and iOS.</p>
+        <br>
+        <p>The first thing we did was look at how Eduarte works. We hoped to find an API we could use, but it doesn't have one because it uses server-side rendering.</p>
+        <p>At first we debated using a tool to scrape the data from the plain HTML file. But we found that too hard and it didn't work great.</p>
+        <p>But then we heard from a teacher that Eduarte gets its schedule from MyX.</p>
+        <p>So when we started looking at the requests in devtools we saw api calls. (yay!)</p>
+        <p>By following what the devtools showed us we wrote a bit of documentation on the APIs ourselves and used that.</p>
+        <p>With a bit of a hacky login system using Microsoft login and copying a token from the url bar in an integrated webview browser it worked!</p>
+        <br>
+        <p>We also added an offline mode, which shows an old cached version of your schedule when you don't have an internet connection.</p>
+        <br>
+        <p>The app is build for both Android and iOS by Github workflows and is automatically released when both finish building.</p>
+        <p>Android is used by some people and the iOS version remains untested since it requires sideloading.</p>
+    </div>
+
+    <div>
+        <h2>Gallery:</h2>
+        <div class="gallery">
+            <img src="@Assets["https://raw.githubusercontent.com/PhoebeSoftware/xrooster/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png"]" alt="Schedule screen"/>
+            <img src="@Assets["https://raw.githubusercontent.com/PhoebeSoftware/xrooster/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png"]" alt="Schedule extra info screen"/>
+            <img src="@Assets["https://raw.githubusercontent.com/PhoebeSoftware/xrooster/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png"]" alt="Attendees screen"/>
+            <img src="@Assets["https://raw.githubusercontent.com/PhoebeSoftware/xrooster/refs/heads/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png"]" alt="Settings screen"/>
+        </div>
+    </div>
+
+    <div>
+        <h2>Fun fact!</h2>
+        <p>While working on this project I found a security vulnerability in our school's website.</p>
+        <p>It allowed every student to see the schedules and grades of other students by just replacing the email address in the api url.</p>
+        <p>These email addresses could easily be found in Microsoft Teams.</p>
+        <p>I reported this to the school and they fixed it within a couple of days.</p>
+        <p>They even gave me a gift card as a thank you.</p>
+    </div>
 </ProjectLayout>
