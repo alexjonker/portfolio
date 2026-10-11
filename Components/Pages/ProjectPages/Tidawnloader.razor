@@ -1,6 +1,35 @@
 @page "/projects/tidawnloader"
 
 <ProjectLayout Project="@ProjectData.Get("tidawnloader")">
-    <h2>How it works</h2>
-    <p>Idk</p>
+    <div>
+        <h2>What?</h2>
+        <p>Tidawnloader was a self-hosted music downloader and manager for <a href="https://tidal.com">Tidal</a>.</p>
+        <p>The idea was that you run it on your own server or computer, and you can download and manage your music from one place.</p>
+        <p>I have stopped working on this project and it does not work anymore.</p>
+    </div>
+
+    <div>
+        <h2>Why?</h2>
+        <p>There isn't really a good way to download and manage music and to easily download it in high quality, so I decided to create tidawnloader.</p>
+        <p>Tidal is a music streaming service that has music in lossless quality. This means it is much higher quality than Spotify and YouTube Music.</p>
+    </div>
+
+    <div>
+        <h2>How?</h2>
+        <p>The app is made with C# and Blazor. It stores its data in a MariaDB database.</p>
+        <p>I found an existing open source project called <a href="https://monochrome.tf">Monochrome</a>, which lets you listen to Tidal's music for free. It helped me a lot with finding ways to download music from Tidal.</p>
+        <p>To make it easy to run, the app comes with a Dockerfile. GitHub workflows build the Docker image automatically.</p>
+        <p>To start it, you download the <code>docker-compose.yaml</code> file, change the settings you want and run <code>docker compose up -d</code>.</p>
+    </div>
+
+    <div>
+        <h2>What happened?</h2>
+        <p>Downloading music like this is not allowed by Tidal. The api I got from Monochrome is also unofficial and uses a pool of accounts, and those accounts keep getting banned. Because of this I could not make it properly, so I stopped working on it.</p>
+        <p>I might continue working on it in the future but using YouTube as a source. This will mean that it won't be in lossless quality.</p>
+        <p>These are the things that worked before I stopped:</p>
+        <ul>
+            <li>Searching for an artist by name and storing it.</li>
+            <li>Downloading individual songs in a separate menu.</li>
+        </ul>
+    </div>
 </ProjectLayout>
