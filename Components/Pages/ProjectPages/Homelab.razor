@@ -1,6 +1,24 @@
 @page "/projects/homelab"
 
 <ProjectLayout Project="@ProjectData.Get("homelab")">
-    <h2>How it works</h2>
-    <p>Idk</p>
+    <div>
+        <h2>What?</h2>
+        <p>I run my own homelab using Proxmox on a small Fujitsu ESPRIMO mini pc.</p>
+        <p>I use virtual machines running Docker to host my own services, websites, and a Minecraft server. This includes things like Nextcloud for file storage, Jellyfin for media streaming, Vaultwarden for passwords and more.</p>
+    </div>
+
+    <div>
+        <h2>How?</h2>
+        <p>I use Proxmox to manage my virtual machines. Most of my applications run in Docker containers, which makes them easier to manage and update.</p>
+        <p>To make my projects accessible from outside my home network, I rent a VPS from Hetzner in Germany and run <a href="https://github.com/fosrl/pangolin">Pangolin</a> as a reverse proxy.</p>
+        <p>This lets me expose my websites and services to the internet without exposing my home IP address.</p>
+        <p>I manage my Docker containers using <a href="https://github.com/getarcaneapp/arcane" >Arcane</a> and host my own projects like <a href="https://github.com/alexjonker/portfolio">this portfolio site</a>, <a href="/projects/tidawnloader">Tidawnloader</a> and many other services like the ones mentioned before.</p>
+    </div>
+
+    <div>
+        <h2>Gallery:</h2>
+        <div class="gallery">
+            <img src="@Assets["content/homelab/mini-pc.jpg"]" alt="Mini pc"/>
+        </div>
+    </div>
 </ProjectLayout>
