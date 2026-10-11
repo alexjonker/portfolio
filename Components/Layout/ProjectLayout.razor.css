@@ -57,4 +57,5 @@ article ::deep .gallery img {
     border: 5px solid var(--accent);
     flex: 1 1 250px;
     min-width: 0;
+    max-width: 40%;
 }
