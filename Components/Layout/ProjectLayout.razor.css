@@ -42,6 +42,10 @@ article ::deep a {
     text-decoration: underline;
 }
 
+article ::deep a:hover {
+    color: var(--accent-hover);
+}
+
 article ::deep > div:not(:last-child) {
     margin-bottom: 100px;
 }
