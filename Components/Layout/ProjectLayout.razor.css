@@ -26,6 +26,12 @@ section {
     line-height: 1.2;
 }
 
+.hero a {
+    color: var(--accent);
+    text-decoration: underline;
+    padding-right: 10px;
+}
+
 .actions {
     display: flex;
     gap: 12px;

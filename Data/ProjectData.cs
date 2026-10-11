@@ -9,27 +9,32 @@ public static class ProjectData
         new(true,
             "nowa-dash",
             "A Raspberry Pi dashboard made using Arch Linux ARM, Labwc and Quickshell.",
-            ["Linux", "Raspberry Pi"]),
+            ["Linux", "Raspberry Pi"],
+            [new ProjectLink("GitHub", "https://github.com/nowa-dash/nowa")]),
 
         new(true,
             "tidawnloader",
             "A self-hosted app to download music from tidal. Made with C# and Blazor",
-            ["Linux", "C#", "Blazor", "Docker"]),
+            ["Linux", "C#", "Blazor", "Docker"],
+            [new ProjectLink("GitHub", "https://github.com/alexjonker/tidawnloader")]),
 
         new(true,
             "xrooster",
             "A Flutter app for viewing your school schedule from MyX.",
-            ["Flutter", "Dart", "Android"]),
+            ["Flutter", "Dart", "Android"],
+            [new ProjectLink("GitHub", "https://github.com/PhoebeSoftware/xrooster")]),
 
         new(true,
             "homelab",
             "A Proxmox-based homelab running Docker, self-hosted services and infrastructure for projects and everyday use.",
-            ["Proxmox", "Docker", "Linux"]),
+            ["Proxmox", "Docker", "Linux"],
+            []),
 
         new(false,
             "portfolio",
             "A portfolio made with C# and Blazor, running on Linux using Docker.",
-            ["Linux", "C#", "Blazor", "Docker"]),
+            ["Linux", "C#", "Blazor", "Docker"],
+            []),
     ];
 
     public static Project Get(string name) =>
