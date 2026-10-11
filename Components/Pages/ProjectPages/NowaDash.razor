@@ -1,9 +1,9 @@
 @page "/projects/nowa-dash"
 
 <ProjectLayout Project="@ProjectData.Get("nowa-dash")">
-    <h2>Why?</h2>
     @* TODO: make this better *@
     <div>
+        <h2>Why?</h2>
         <p>When I bought my miata it had an old aftermarket radio which could only play cd's.</p>
         <p>So very quickly I wanted to modernize it so I could use android auto, bluetooth for music, and more.</p>
         <p>I already had a Raspberry Pi and a touchscreen for it laying around.</p>
@@ -15,11 +15,13 @@
         <p>I believe this is the simplest because I can just download any external app I want and get it to work.</p>
     </div>
 
-    <h2>Gallery:</h2>
-    <div class="gallery">
-        <img src="@Assets["content/nowa-dash/main.jpg"]" alt="Home screen"/>
-        <img src="@Assets["content/nowa-dash/android-auto.jpg"]" alt="Android auto screen"/>
-        <img src="@Assets["content/nowa-dash/music.jpg"]" alt="Music player screen"/>
-        <img src="@Assets["content/nowa-dash/files.jpg"]" alt="Files browser screen"/>
+    <div>
+        <h2>Gallery:</h2>
+        <div class="gallery">
+            <img src="@Assets["content/nowa-dash/main.jpg"]" alt="Home screen"/>
+            <img src="@Assets["content/nowa-dash/android-auto.jpg"]" alt="Android auto screen"/>
+            <img src="@Assets["content/nowa-dash/music.jpg"]" alt="Music player screen"/>
+            <img src="@Assets["content/nowa-dash/files.jpg"]" alt="Files browser screen"/>
+        </div>
     </div>
 </ProjectLayout>
