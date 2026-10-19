@@ -12,8 +12,8 @@ file_extensions = [
 
 
 if shutil.which("exiftool") is None:
-        print("Error: exiftool not installed.")
-        exit()
+    print("Error: exiftool not installed.")
+    exit()
 
 cmd = ["exiftool", "-all=", "-overwrite_original", "-r", "-q", "-progress"]
 for ext in file_extensions:
